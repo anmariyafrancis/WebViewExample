@@ -18,6 +18,7 @@ class ViewController: UIViewController {
          super.viewDidLoad()
          loadLambtonUrl()
     }
+   
    @IBAction func showHistory(_ sender: UIBarButtonItem)
     {
         if myWebKitView.canGoBack
@@ -37,12 +38,22 @@ class ViewController: UIViewController {
         let urlReq = URLRequest(url: url!)
         myWebKitView.load(urlReq)
     }
+   
      func loadHtmlString()
     {
         let htmlString = "<h1>Hello World</h1>"
         myWebKitView.loadHTMLString(htmlString, baseURL: nil)
         
     }
+   
+   //Use Safari View Controller to open web link
+     @IBAction func watchNowUsingSafari(_ sender: UIBarButtonItem)
+    {
+        let videoUrl = URL(string: "https://www.youtube.com/watch?v=gnjXbR2eNDE")
+        let safariVC = SFSafariViewController(url: videoUrl!)
+        self.present(safariVC, animated: true, completion: nil)
+    }
+   
      @IBAction func btnNavigation(_ sender: UIBarButtonItem)
     {
         switch sender.tag {
@@ -71,8 +82,6 @@ class ViewController: UIViewController {
         default:
             print("No Navigation action found...")
         }
-    
-
-
+    }
 }
 
