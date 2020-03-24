@@ -54,7 +54,7 @@ class ViewController: UIViewController {
                 print("Can't Go Forward")
             }
          case 3://refresh button is pressed
-            myWebKitView.reload()
+            myWebKitView.reloadFromOrgin()
         default:
             print("No Navigation action found...")
         }
