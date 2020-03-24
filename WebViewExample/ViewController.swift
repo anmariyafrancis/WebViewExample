@@ -18,6 +18,19 @@ class ViewController: UIViewController {
          super.viewDidLoad()
          loadLambtonUrl()
     }
+   @IBAction func showHistory(_ sender: UIBarButtonItem)
+    {
+        if myWebKitView.canGoBack
+        {
+            let historyList =  myWebKitView.backForwardList.backList
+            if historyList.count > 0
+            {
+                for item in historyList {
+                    print("\(String(describing: item.title)) -  \(item.url.absoluteURL)")
+                }
+            }
+        }
+    }
     func loadLambtonUrl()
     {
         let url = URL(string: "https://www.lambtoncollege.ca/")
