@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
          super.viewDidLoad()
          loadLambtonUrl()
-        // Do any additional setup after loading the view.
     }
     func loadLambtonUrl()
     {
@@ -54,6 +53,8 @@ class ViewController: UIViewController {
             {
                 print("Can't Go Forward")
             }
+         case 3://refresh button is pressed
+            myWebKitView.reload()
         default:
             print("No Navigation action found...")
         }
